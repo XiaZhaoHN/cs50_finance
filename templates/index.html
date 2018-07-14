@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="post">
+        <table class="table table-striped" width="100%">
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            {% for k in range(i) %}
+                <tr>
+                    <td>{{ symbols[k] }}</td>
+                    <td>{{ symbols[k] }}</td>
+                    <td>{{ shares[k] }}</td>
+                    <td>{{ prices[k] }}</td>
+                    <td>{{ totals[k] }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ total }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{ overall }}</td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
